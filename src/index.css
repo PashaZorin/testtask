@@ -1,0 +1,92 @@
+@import url(c:\Users\COMPUS.COM.UA\Desktop\GitHub\abz-agency\src\reset.css);
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.outer-container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.inner-container {
+  width: 380px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.button {
+  padding: 4px 22px;
+  background-color: #f4e041;
+  border-radius: 80px;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 13px 0;
+}
+
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.main {
+  width: 100%;
+  background-color: #e5e5e5;
+}
+
+.about__content {
+  text-align: center;
+  background-image: url(../src/images/headerBackground1.png);
+  color: #fff;
+  padding: 163px 0;
+  background-repeat: no-repeat;
+}
+
+.about__content-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  margin: 21px 0 32px 0;
+}
+
+.get {
+  text-align: center;
+  margin-top: 140px;
+  padding-bottom: 140px;
+}
+
+.get__content {
+  margin: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 29px;
+}
+/*# sourceMappingURL=index.css.map */

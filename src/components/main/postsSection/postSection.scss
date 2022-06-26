@@ -1,0 +1,52 @@
+.post {
+  text-align: center;
+  &__form {
+    margin-top: 48px;
+    padding-bottom: 100px;
+  }
+  &__input {
+    position: relative;
+  }
+  &__error-messege {
+    display: block;
+    color: red;
+    position: absolute;
+    transform: translateY(5px) translateX(15px);
+  }
+
+  &__input-text {
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #7e7e7e;
+    border: 1px solid #d0cfcf;
+    border-radius: 4px;
+    padding: 14px 16px;
+    outline: none;
+    margin-bottom: 50px;
+  }
+  &__input-radio-conteiner {
+    font-size: 16px;
+    line-height: 26px;
+    text-align: start;
+  }
+  &__upload-button {
+    background-color: aqua;
+  }
+  &__upload-input {
+    :nth-child() {
+    }
+    :nth-child(3) {
+      padding: 15.5px 13px;
+    }
+    :nth-child(2) {
+      border-radius: 0 4px 4px 0;
+      transform: translate(-12px);
+      width: 330px;
+    }
+  }
+}
+.css-j204z7-MuiFormControlLabel-root {
+  margin-top: -9px;
+}

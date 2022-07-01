@@ -33,7 +33,7 @@ const PostSection = () => {
       new Error(error);
     }
   }, []);
-  //console.log(tokenId, "token");
+  console.log(tokenId, "token");
 
   const initialValues = {
     name: "",
@@ -44,7 +44,6 @@ const PostSection = () => {
   };
 
   const onSubmit = (value, { resetForm }) => {
-    //console.log(value, "value");
     dispatch(
       fetchDataPost({
         ...value,
@@ -68,7 +67,7 @@ const PostSection = () => {
       .min(10)
       .required("The field is required"),
     position: Yup.string().required(""),
-    photo: Yup.string().required(""),
+    //photo: Yup.string().required(""),
   });
 
   return (
@@ -109,13 +108,9 @@ const PostSection = () => {
               <Box height={43} />
               <RadioGroupPost name="position" />
               <Box height={39} />
-              {/*<PostInput
-                type="file"
-                name="photo"
-                fullWidth
-                className="post-input"
-              />*/}
-              <UploadButtons />
+
+              <UploadButtons name="photo" type="file" />
+
               <Box height={48} />
               <Button
                 text="Sign up"

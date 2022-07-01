@@ -31,20 +31,33 @@
     line-height: 26px;
     text-align: start;
   }
-  &__upload-button {
-    background-color: aqua;
+  &__upload-conteiner {
+    position: relative;
+    display: flex;
+    font-size: 16px;
+    line-height: 26px;
+    input {
+      position: absolute;
+      width: 100%;
+      height: 54px;
+      z-index: 3;
+      opacity: 0;
+    }
   }
-  &__upload-input {
-    :nth-child() {
-    }
-    :nth-child(3) {
-      padding: 15.5px 13px;
-    }
-    :nth-child(2) {
-      border-radius: 0 4px 4px 0;
-      transform: translate(-12px);
-      width: 330px;
-    }
+  &__upload-button {
+    padding: 14px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.871);
+    border-radius: 4px 0px 0px 4px;
+    z-index: 2;
+  }
+  &__upload-text {
+    color: #7e7e7e;
+    padding: 14px 15px;
+    border: 1px solid #d0cfcf;
+    border-radius: 0px 4px 4px 0px;
+    text-align: start;
+    width: 100%;
+    transform: translateX(-1px);
   }
 }
 .css-j204z7-MuiFormControlLabel-root {

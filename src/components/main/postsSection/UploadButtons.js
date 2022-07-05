@@ -1,23 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { useField } from "formik";
 
 export default function UploadButtons(props) {
-  const [imgFile, setImgFile] = useState(null);
   const [field] = useField(props);
-  const toggleimgFile = (data) => setImgFile(data);
-
   return (
     <div className="post__upload-conteiner">
+      <input className="post__upload-input-transparent" {...field} {...props} />
+      <p className="post__upload-button">Upload</p>
       <input
-        {...field}
-        {...props}
-        onChange={(e) => toggleimgFile(e.target.files[0])}
+        disabled
+        className="post__upload-text"
+        value={field.value ? field.value : "Upload your photo"}
       />
-      <span className="post__upload-button">Upload</span>
-      <span className="post__upload-text">
-        {imgFile ? imgFile.name : "Upload your photo"}
-      </span>
     </div>
   );
 }

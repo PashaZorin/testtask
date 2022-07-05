@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchDataGet = createAsyncThunk(
   "todos/fetchDataGet",
+
   async function (action, { rejectWithValue }) {
     try {
       const respons = await fetch(`${action}`);
@@ -14,23 +15,26 @@ export const fetchDataGet = createAsyncThunk(
 );
 export const fetchDataPost = createAsyncThunk(
   "todos/fetchDataPost",
-  async function (action, { getState }) {
-    console.log(action, "todos/fetchDataPost");
-    console.log(getState());
-    const respons = await fetch(
-      "https://frontend-test-assignment-api.abz.agency/api/v1/users",
-      {
-        method: "POST",
-        headers: {
-          //'Authorization': "Bearer " + token,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(action),
-      }
-    );
-    const data = await respons.json();
-    console.log(data, "data,todos/fetchDataPost");
-    return data;
+
+  async function (action, { rejectWithValue }) {
+    console.log(action, "actions================================");
+    try {
+      const respons = await fetch(
+        "https://frontend-test-assignment-api.abz.agency/api/v1/users",
+        {
+          method: "POST",
+          headers: {
+            Token: `${action.token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ fails: action.userInfo }),
+        }
+      );
+      const data = await respons.json();
+      return data;
+    } catch (error) {
+      rejectWithValue(error.messege);
+    }
   }
 );
 
@@ -61,12 +65,13 @@ const todoSlice = createSlice({
     [fetchDataGet.rejected]: (state, action) =>
       console.log(action.payload, "rejected"),
     [fetchDataPost.rejected]: (state, action) =>
-      console.log(action.payload, "rejected"),
+      console.log(action, "rejected"),
 
     [fetchDataPost.pending]: (state, action) =>
       console.log(action.payload, "action/pending"),
     [fetchDataPost.fulfilled]: (state, action) => {
       console.log(action.payload, "fulfilled");
+      console.log(action, "ok-----------------------------------");
     },
   },
 });

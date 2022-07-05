@@ -25,7 +25,7 @@ export const fetchDataPost = createAsyncThunk(
           method: "POST",
           headers: {
             Token: `${action.token}`,
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
           },
           body: JSON.stringify({ fails: action.userInfo }),
         }
